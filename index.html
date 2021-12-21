@@ -14817,8 +14817,8 @@ corref V and RC is
 <p>By the correlation coefficient, it shows that rate of case and rate of deaths have a positive relationship of stringency. The vaccination number has a negative relationship of stringency. So as rate of cases and rate of deaths increase, the stringency of policies also increases. When the number of vaccination increases, the stringency of policies decreases. Another interesting obervation is that as the number of vaccination increases, the rate of cases and rate of deaths decrease.</p>
 <h4 id="4.2-further-observation-of-numerical-analysis">4.2 further observation of numerical analysis<a class="anchor-link" href="#4.2-further-observation-of-numerical-analysis">&#182;</a></h4><p>For further analysis, I want to make two kind of regression models to fit the data. One is linear. The other is non linear.</p>
 <ol>
-<li>define a function of stringency in terms of rate of cases, rate of deaths, and number of vaccination. $S = c\cdot X, X=\begin{pmatrix}{R_c, \\ R_d, \\ V}\end{pmatrix}$</li>
-<li>define a function of rate of cases in terms of stringency and number of vaccination. $R_c = c\cdot X, X=\begin{pmatrix}{S, \\ V}\end{pmatrix}$</li>
+<li>define a function of stringency in terms of rate of cases, rate of deaths, and number of vaccination. $S = c\cdot X, X=\begin{pmatrix}{R_c \\ R_d \\ V}\end{pmatrix}$</li>
+<li>define a function of rate of cases in terms of stringency and number of vaccination. $R_c = c\cdot X, X=\begin{pmatrix}{S \\ V}\end{pmatrix}$</li>
 <li>for non linear regression, use SVR. or in math $Ac=y$. $A$ is a matrix.</li>
 </ol>
 <p>Then I can calculate different models using different partition $P$, which means different $n$.</p>
@@ -14971,7 +14971,8 @@ corref V and RC is
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Conclusion-and-Future-Work">Conclusion and Future Work<a class="anchor-link" href="#Conclusion-and-Future-Work">&#182;</a></h2><p>By the regression models, I can confirm my assumption that the stringency of policies is related to the increasing rate of cases and the number of vaccination. However, the number of completed vaccination and the stringency of policies don't affect much for the rate of cases and the rate of deaths. This is the most odd observation. To further investigate this observation as well as my assumption, I think a null hypothesis test should be used.</p>
+<h2 id="Conclusion-and-Future-Work">Conclusion and Future Work<a class="anchor-link" href="#Conclusion-and-Future-Work">&#182;</a></h2><p>By the regression models, I can confirm my assumption that the stringency of policies is related to the increasing rate of cases and the number of vaccination. However, the number of completed vaccination and the stringency of policies don't affect much for the rate of cases and the rate of deaths. This is the most odd observation. To further investigate this observation as well as my assumption, I think a null hypothesis test should be used. Also, I can apply the same numerical analysis to the states in the US. In addition, the stringency of policies could also be related to the data of other countries.</p>
+<p>So far I can conclude that the stringency in the US, without digging into each states, is driven by the rate of cases, rate of deaths, and number of completed vaccination.</p>
 
 </div>
 </div>
