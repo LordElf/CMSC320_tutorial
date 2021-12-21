@@ -14031,7 +14031,7 @@ a.anchor-link {
 By this data, I can roughly know what happened during the pandemic. It may provide some useful information to understand how Covid and policies are impacted by each other.</p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
@@ -14074,84 +14074,6 @@ By this data, I can roughly know what happened during the pandemic. It may provi
      </div>
 </div>
 </div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">KeyboardInterrupt</span>                         Traceback (most recent call last)
-<span class="ansi-green-fg">/tmp/ipykernel_2804276/1357958785.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">     23</span> 
-<span class="ansi-green-intense-fg ansi-bold">     24</span> policy_data_2020 <span class="ansi-blue-fg">=</span> pd<span class="ansi-blue-fg">.</span>read_csv<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;covid/covid-policy-tracker/data/OxCGRT_withnotes_2020.csv&#39;</span><span class="ansi-blue-fg">,</span>low_memory<span class="ansi-blue-fg">=</span><span class="ansi-green-fg">False</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">---&gt; 25</span><span class="ansi-red-fg"> </span>policy_data_2021 <span class="ansi-blue-fg">=</span> pd<span class="ansi-blue-fg">.</span>read_csv<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;covid/covid-policy-tracker/data/OxCGRT_withnotes_2021.csv&#39;</span><span class="ansi-blue-fg">,</span>low_memory<span class="ansi-blue-fg">=</span><span class="ansi-green-fg">False</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     26</span> policy_data <span class="ansi-blue-fg">=</span> policy_data_2020<span class="ansi-blue-fg">.</span>append<span class="ansi-blue-fg">(</span>policy_data_2021<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     27</span> policy_data <span class="ansi-blue-fg">=</span> policy_data<span class="ansi-blue-fg">.</span>drop<span class="ansi-blue-fg">(</span>columns<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">&#39;M1_Wildcard&#39;</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">)</span>
-
-<span class="ansi-green-fg">~/anaconda3/envs/server/lib/python3.7/site-packages/pandas/util/_decorators.py</span> in <span class="ansi-cyan-fg">wrapper</span><span class="ansi-blue-fg">(*args, **kwargs)</span>
-<span class="ansi-green-intense-fg ansi-bold">    309</span>                     stacklevel<span class="ansi-blue-fg">=</span>stacklevel<span class="ansi-blue-fg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">    310</span>                 )
-<span class="ansi-green-fg">--&gt; 311</span><span class="ansi-red-fg">             </span><span class="ansi-green-fg">return</span> func<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    312</span> 
-<span class="ansi-green-intense-fg ansi-bold">    313</span>         <span class="ansi-green-fg">return</span> wrapper
-
-<span class="ansi-green-fg">~/anaconda3/envs/server/lib/python3.7/site-packages/pandas/io/parsers/readers.py</span> in <span class="ansi-cyan-fg">read_csv</span><span class="ansi-blue-fg">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, squeeze, prefix, mangle_dupe_cols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, error_bad_lines, warn_bad_lines, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options)</span>
-<span class="ansi-green-intense-fg ansi-bold">    584</span>     kwds<span class="ansi-blue-fg">.</span>update<span class="ansi-blue-fg">(</span>kwds_defaults<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    585</span> 
-<span class="ansi-green-fg">--&gt; 586</span><span class="ansi-red-fg">     </span><span class="ansi-green-fg">return</span> _read<span class="ansi-blue-fg">(</span>filepath_or_buffer<span class="ansi-blue-fg">,</span> kwds<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    587</span> 
-<span class="ansi-green-intense-fg ansi-bold">    588</span> 
-
-<span class="ansi-green-fg">~/anaconda3/envs/server/lib/python3.7/site-packages/pandas/io/parsers/readers.py</span> in <span class="ansi-cyan-fg">_read</span><span class="ansi-blue-fg">(filepath_or_buffer, kwds)</span>
-<span class="ansi-green-intense-fg ansi-bold">    486</span> 
-<span class="ansi-green-intense-fg ansi-bold">    487</span>     <span class="ansi-green-fg">with</span> parser<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">--&gt; 488</span><span class="ansi-red-fg">         </span><span class="ansi-green-fg">return</span> parser<span class="ansi-blue-fg">.</span>read<span class="ansi-blue-fg">(</span>nrows<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    489</span> 
-<span class="ansi-green-intense-fg ansi-bold">    490</span> 
-
-<span class="ansi-green-fg">~/anaconda3/envs/server/lib/python3.7/site-packages/pandas/io/parsers/readers.py</span> in <span class="ansi-cyan-fg">read</span><span class="ansi-blue-fg">(self, nrows)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1045</span>     <span class="ansi-green-fg">def</span> read<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span> nrows<span class="ansi-blue-fg">=</span><span class="ansi-green-fg">None</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">   1046</span>         nrows <span class="ansi-blue-fg">=</span> validate_integer<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;nrows&#34;</span><span class="ansi-blue-fg">,</span> nrows<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">-&gt; 1047</span><span class="ansi-red-fg">         </span>index<span class="ansi-blue-fg">,</span> columns<span class="ansi-blue-fg">,</span> col_dict <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>_engine<span class="ansi-blue-fg">.</span>read<span class="ansi-blue-fg">(</span>nrows<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1048</span> 
-<span class="ansi-green-intense-fg ansi-bold">   1049</span>         <span class="ansi-green-fg">if</span> index <span class="ansi-green-fg">is</span> <span class="ansi-green-fg">None</span><span class="ansi-blue-fg">:</span>
-
-<span class="ansi-green-fg">~/anaconda3/envs/server/lib/python3.7/site-packages/pandas/io/parsers/c_parser_wrapper.py</span> in <span class="ansi-cyan-fg">read</span><span class="ansi-blue-fg">(self, nrows)</span>
-<span class="ansi-green-intense-fg ansi-bold">    226</span> 
-<span class="ansi-green-intense-fg ansi-bold">    227</span>             <span class="ansi-green-fg">else</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">--&gt; 228</span><span class="ansi-red-fg">                 </span>data <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>_reader<span class="ansi-blue-fg">.</span>read<span class="ansi-blue-fg">(</span>nrows<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    229</span>         <span class="ansi-green-fg">except</span> StopIteration<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">    230</span>             <span class="ansi-green-fg">if</span> self<span class="ansi-blue-fg">.</span>_first_chunk<span class="ansi-blue-fg">:</span>
-
-<span class="ansi-green-fg">~/anaconda3/envs/server/lib/python3.7/site-packages/pandas/_libs/parsers.pyx</span> in <span class="ansi-cyan-fg">pandas._libs.parsers.TextReader.read</span><span class="ansi-blue-fg">()</span>
-
-<span class="ansi-green-fg">~/anaconda3/envs/server/lib/python3.7/site-packages/pandas/_libs/parsers.pyx</span> in <span class="ansi-cyan-fg">pandas._libs.parsers.TextReader._read_rows</span><span class="ansi-blue-fg">()</span>
-
-<span class="ansi-green-fg">~/anaconda3/envs/server/lib/python3.7/site-packages/pandas/_libs/parsers.pyx</span> in <span class="ansi-cyan-fg">pandas._libs.parsers.TextReader._convert_column_data</span><span class="ansi-blue-fg">()</span>
-
-<span class="ansi-green-fg">~/anaconda3/envs/server/lib/python3.7/site-packages/pandas/core/dtypes/common.py</span> in <span class="ansi-cyan-fg">is_extension_array_dtype</span><span class="ansi-blue-fg">(arr_or_dtype)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1418</span> 
-<span class="ansi-green-intense-fg ansi-bold">   1419</span> 
-<span class="ansi-green-fg">-&gt; 1420</span><span class="ansi-red-fg"> </span><span class="ansi-green-fg">def</span> is_extension_array_dtype<span class="ansi-blue-fg">(</span>arr_or_dtype<span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">-&gt;</span> bool<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">   1421</span>     &#34;&#34;&#34;
-<span class="ansi-green-intense-fg ansi-bold">   1422</span>     Check <span class="ansi-green-fg">if</span> an object <span class="ansi-green-fg">is</span> a pandas extension array type<span class="ansi-blue-fg">.</span>
-
-<span class="ansi-red-fg">KeyboardInterrupt</span>: </pre>
-</div>
-</div>
-
-</div>
-
 </div>
 
 </div>
