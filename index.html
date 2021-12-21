@@ -14079,7 +14079,7 @@ By this data, I can roughly know what happened during the pandemic. It may provi
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="3-Data-Processing">3 Data Processing<a class="anchor-link" href="#3-Data-Processing">&#182;</a></h2><p>For the first step, I want to visualize the data to show the relationship between the policies and the COVID-19. Then we can get a rough answer for the following questions:</p>
+<h2 id="3-Data-Processing-and-Visualization">3 Data Processing and Visualization<a class="anchor-link" href="#3-Data-Processing-and-Visualization">&#182;</a></h2><p>For the first step, I want to visualize the data to show the relationship between the policies and the COVID-19. Then we can get a rough answer for the following questions:</p>
 <ol>
 <li>How Covid-19 progress in the US?</li>
 <li>How strigency changes with time?</li>
@@ -14138,7 +14138,7 @@ By this data, I can roughly know what happened during the pandemic. It may provi
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>After some basic data processing, I can plot the data the know the rough situation of the pandemic in the US. I plot four line charts to show the number of confirmed cases, confirmed deaths, the number of vaccinations, and the stringency of the policies.</p>
+<h4 id="3.1-plot-the-data-in-a-general-scale-using-line-chart">3.1 plot the data in a general scale using line chart<a class="anchor-link" href="#3.1-plot-the-data-in-a-general-scale-using-line-chart">&#182;</a></h4><p>After some basic data processing, I can plot the data the know the rough situation of the pandemic in the US. I plot four line charts to show the number of confirmed cases, confirmed deaths, the number of vaccinations, and the stringency of the policies.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -14184,8 +14184,8 @@ By this data, I can roughly know what happened during the pandemic. It may provi
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>After ploting out the four values, I can see some important time series that the policies are chaning. The first one is between March and April, 2020. We can see that the stringency is suddently increasing. The second one is between July and November. Although the number of cases and deaths was steadily increasing, the strigency of policies was decreasing. As a result, it was a incredible increase around December 2020. The third one is between February and July 2021. As the number of vaccinations increasing, the cases and deaths grew slower and the stringency of policies was decreasing. The fourth one is around December 2021. There is a increasing trend of the cases and stringency of policies.</p>
-<p>Then, I want to take a closer look at the data to see what is the more exact date of the change. What is the related information in the timeline at those periods. I plot the four lines animation to show the change of date directly.</p>
+<h4 id="3.2-plot-the-data-in-a-general-scale-of-US-using-animation">3.2 plot the data in a general scale of US using animation<a class="anchor-link" href="#3.2-plot-the-data-in-a-general-scale-of-US-using-animation">&#182;</a></h4><p>After ploting out the four values, I can see some important time series that the policies are chaning. The first one is between March and April, 2020. We can see that the stringency is suddently increasing. The second one is between July and November. Although the number of cases and deaths was steadily increasing, the strigency of policies was decreasing. As a result, it was a incredible increase around December 2020. The third one is between February and July 2021. As the number of vaccinations increasing, the cases and deaths grew slower and the stringency of policies was decreasing. The fourth one is around December 2021. There is a increasing trend of the cases and stringency of policies.</p>
+<p>Then, I want to take a closer look at the data to see what is the more exact date of the change. What is the related information in the timeline at those periods. I plot the four lines animation to show the change of date directly. I will use <a href="https://jackmckew.github.io/pandas_alive/README.html">Pandas Alive</a> to show the animation.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -14194,8 +14194,7 @@ By this data, I can roughly know what happened during the pandemic. It may provi
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
-<span class="n">buffer</span> <span class="o">=</span> <span class="n">buffer</span><span class="p">[[</span><span class="s1">&#39;ConfirmedCases&#39;</span><span class="p">,</span><span class="s1">&#39;ConfirmedDeaths&#39;</span><span class="p">,</span><span class="s1">&#39;Series_Complete_Yes&#39;</span><span class="p">,</span><span class="s1">&#39;StringencyIndex&#39;</span><span class="p">]]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">buffer</span> <span class="o">=</span> <span class="n">buffer</span><span class="p">[[</span><span class="s1">&#39;ConfirmedCases&#39;</span><span class="p">,</span><span class="s1">&#39;ConfirmedDeaths&#39;</span><span class="p">,</span><span class="s1">&#39;Series_Complete_Yes&#39;</span><span class="p">,</span><span class="s1">&#39;StringencyIndex&#39;</span><span class="p">]]</span>
 <span class="n">buffer</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">buffer</span><span class="o">.</span><span class="n">sort_index</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">plots</span> <span class="o">=</span> <span class="p">[]</span>
@@ -14283,12 +14282,13 @@ Generating LineChart, plotting [&#39;StringencyIndex&#39;]
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Through the animation, I can the the first important date is around March 10. Looking it up in the timeline data, we can see on March 10 WHO announced that COVID-10 a pandemic. On March 13 "President Donald J. Trump declares a nationwide emergency". On March 15 US states started shuting down. As a result, the stringency increased rapidly. During the second period, as the presidential election was pushing forward, Trump was tested positive on Oct 2,2020. Soon enough, Trump anounced that he was recovered. So the stringency decreased a little bit. On Nov 3 the election occured. We can observe the tangent line of the confirmed cases changed rapidly around that time, which means the rate of cases increased rapidly. Right after the election, the stringency was increading again. In the third period, vaccines for COVID-19 came out. As number of vaccination was increasing, the rate of cases and deaths decreased then the stringency of the policies decreased. In the fourth period, the Omicron mutation was detected. There is an increasing trend of the cases and the stringency of the policies.</p>
+<p>At this point, I would like to make an assumption that the stringency of policies is related to the increasing rate of cased and the coverage of vaccination. The government tends to control the rate of cases. This is a general assumption. Then I will visualize the data of most states to further explore the relationship between the policies and the COVID-19.</p>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>try ploting all the data in the US animatively. We needs several dataFrames, which have states as columns and date as index. Each dataFrame represents an element I want to plot(ConfirmedCases, ConfirmedDeaths etc.).</p>
+<h4 id="3.3-plot-the-data-across-the-US-states-using-bar-chart-and-geo-map-in-animation">3.3 plot the data across the US states using bar chart and geo map in animation<a class="anchor-link" href="#3.3-plot-the-data-across-the-US-states-using-bar-chart-and-geo-map-in-animation">&#182;</a></h4><p>For the next step, I try ploting all the data for every state in the US animatively. To do this I needs several dataFrames, which have states as columns and date as index. Each dataFrame represents an element (ConfirmedCases, ConfirmedDeaths etc.).</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -14345,15 +14345,19 @@ Generating BarChartRace, plotting [&#39;AK&#39;, &#39;AL&#39;, &#39;AR&#39;, &#3
 
 </div>
 
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>After doing the above steps, I can plot multiple bar charts. Then I want to plot them together with geometry information. So I downloaded the shapefile of the US from <a href="https://www2.census.gov/geo/tiger/GENZ2018/shp/cb_2018_us_state_500k.zip">US Census</a>. I also use <a href="https://geopandas.org/en/stable/index.html">geopandas</a> to read the shapefile. Then I used <a href="https://epsg.io/3081">EPSG:3081</a> to convert the coordinate system. I removed the states GU MP NV AS HI, since they are too small to be shown.</p>
+
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">minx</span><span class="p">,</span> <span class="n">miny</span><span class="p">,</span> <span class="n">maxx</span><span class="p">,</span> <span class="n">maxy</span> <span class="o">=</span> <span class="o">-</span><span class="mf">2e7</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-.</span><span class="mf">5e7</span><span class="p">,</span> <span class="mf">1.2e7</span>
-<span class="n">states_map</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s1">&#39;cb_2018_us_state_500k.shp&#39;</span><span class="p">)</span>
-<span class="c1"># states_map = geopandas.read_file(&#39;tl_2017_us_state.shp&#39;)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">states_map</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s1">&#39;cb_2018_us_state_500k.shp&#39;</span><span class="p">)</span>
 <span class="n">states_map</span> <span class="o">=</span> <span class="n">states_map</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span><span class="n">epsg</span><span class="o">=</span><span class="mi">3081</span><span class="p">)</span>
 <span class="c1"># remove GU MP NV AS HI</span>
 <span class="n">states_map</span> <span class="o">=</span> <span class="n">states_map</span><span class="p">[</span><span class="n">states_map</span><span class="o">.</span><span class="n">STUSPS</span> <span class="o">!=</span> <span class="s1">&#39;GU&#39;</span><span class="p">]</span>
@@ -14369,6 +14373,12 @@ Generating BarChartRace, plotting [&#39;AK&#39;, &#39;AL&#39;, &#39;AR&#39;, &#3
 </div>
 </div>
 
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Before plotting, I need to convert the DataFrames into GeoDataFrames embeded geometry information. The first step is transposing the dataFrames to have states as index and date as columns. Then I convert geometry information into a dictionary. Using the dictionary, I assign the geometry information to the states. Then I convert the GeoDataFrames into GeoDataFrames. I want to plot the data in a $2\times 2$ spacegrid. the code is as follows:</p>
+
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
@@ -14414,7 +14424,7 @@ Generating BarChartRace, plotting [&#39;AK&#39;, &#39;AL&#39;, &#39;AR&#39;, &#3
 <span class="n">f2_ax4</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;strigency&#39;</span><span class="p">)</span>
 <span class="n">geo_stri</span><span class="o">.</span><span class="n">ax</span> <span class="o">=</span> <span class="n">f2_ax4</span>
 <span class="n">plots</span> <span class="o">=</span> <span class="p">[</span><span class="n">cases_chart</span><span class="p">,</span><span class="n">deaths_chart</span><span class="p">,</span><span class="n">series_chart</span><span class="p">,</span><span class="n">geo_stri</span><span class="p">]</span>
-<span class="c1"># pandas_alive.animate_multiple_plots(filename=&#39;All_states_bar.mp4&#39;,plots=plots, custom_fig=figs,adjust_subplot_hspace=.1,adjust_subplot_wspace=.1)</span>
+<span class="n">pandas_alive</span><span class="o">.</span><span class="n">animate_multiple_plots</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;All_states_bar.mp4&#39;</span><span class="p">,</span><span class="n">plots</span><span class="o">=</span><span class="n">plots</span><span class="p">,</span> <span class="n">custom_fig</span><span class="o">=</span><span class="n">figs</span><span class="p">,</span><span class="n">adjust_subplot_hspace</span><span class="o">=.</span><span class="mi">1</span><span class="p">,</span><span class="n">adjust_subplot_wspace</span><span class="o">=.</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -14422,6 +14432,22 @@ Generating BarChartRace, plotting [&#39;AK&#39;, &#39;AL&#39;, &#39;AR&#39;, &#3
 </div>
 </div>
 
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Since titles of each subplots could be set, the following table shows the titles of each subplots.</p>
+<table>
+<tr>
+<th>Confirmed Cases</th>
+<th>Confirmed Deaths</th>
+</tr>
+<tr>
+<td>Completed Vaccinations</td>
+<td>Stringency of States</td>
+</tr>
+</table><p>In the plot of Stringency of States, the color represents the value. Deeper the color, the higher the stringency.</p>
+
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
@@ -14460,16 +14486,22 @@ Generating BarChartRace, plotting [&#39;AK&#39;, &#39;AL&#39;, &#39;AR&#39;, &#3
 
 </div>
 
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>From this animation, I can further confirmed my assumption that the stringency of policies is related to the increasing rate of cased and the number of vaccinations. I believe it could also be correct for most states. To make a further observation, I plot the four values separately using geo map.</p>
+
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># US_cases_gdf.plot_animated(filename=&#39;geoCases.mp4&#39;,steps_per_period=1,period_length=10,period_fmt=&#39;%Y-%m-%d&#39;,cmap=&quot;Reds&quot;,dpi=144, fixed_max=True)</span>
-<span class="c1"># US_Deaths_gdf.plot_animated(filename=&#39;geoDeaths.mp4&#39;,steps_per_period=1,period_length=10,period_fmt=&#39;%Y-%m-%d&#39;,cmap=&quot;Reds&quot;,dpi=144, fixed_max=True)</span>
-<span class="c1"># US_Stringency_gdf.plot_animated(filename=&#39;geoStringency.mp4&#39;,steps_per_period=1,period_length=10,period_fmt=&#39;%Y-%m-%d&#39;,cmap=&quot;Reds&quot;,dpi=144, fixed_max=True)</span>
-<span class="c1"># US_series_gdf.plot_animated(filename=&#39;geoSeries.mp4&#39;,steps_per_period=1,period_length=10,period_fmt=&#39;%Y-%m-%d&#39;,cmap=&quot;Reds&quot;,dpi=144, fixed_max=True)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">US_cases_gdf</span><span class="o">.</span><span class="n">plot_animated</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;geoCases.mp4&#39;</span><span class="p">,</span><span class="n">steps_per_period</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">period_length</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">period_fmt</span><span class="o">=</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;Reds&quot;</span><span class="p">,</span><span class="n">dpi</span><span class="o">=</span><span class="mi">144</span><span class="p">,</span> <span class="n">fixed_max</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">US_Deaths_gdf</span><span class="o">.</span><span class="n">plot_animated</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;geoDeaths.mp4&#39;</span><span class="p">,</span><span class="n">steps_per_period</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">period_length</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">period_fmt</span><span class="o">=</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;Reds&quot;</span><span class="p">,</span><span class="n">dpi</span><span class="o">=</span><span class="mi">144</span><span class="p">,</span> <span class="n">fixed_max</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">US_Stringency_gdf</span><span class="o">.</span><span class="n">plot_animated</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;geoStringency.mp4&#39;</span><span class="p">,</span><span class="n">steps_per_period</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">period_length</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">period_fmt</span><span class="o">=</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;Reds&quot;</span><span class="p">,</span><span class="n">dpi</span><span class="o">=</span><span class="mi">144</span><span class="p">,</span> <span class="n">fixed_max</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">US_series_gdf</span><span class="o">.</span><span class="n">plot_animated</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;geoSeries.mp4&#39;</span><span class="p">,</span><span class="n">steps_per_period</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">period_length</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">period_fmt</span><span class="o">=</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;Reds&quot;</span><span class="p">,</span><span class="n">dpi</span><span class="o">=</span><span class="mi">144</span><span class="p">,</span> <span class="n">fixed_max</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -14477,6 +14509,12 @@ Generating BarChartRace, plotting [&#39;AK&#39;, &#39;AL&#39;, &#39;AR&#39;, &#3
 </div>
 </div>
 
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>This is how the cases progress in the US.</p>
+
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
@@ -14515,6 +14553,12 @@ Generating BarChartRace, plotting [&#39;AK&#39;, &#39;AL&#39;, &#39;AR&#39;, &#3
 
 </div>
 
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>This is how the deaths progress in the US.</p>
+
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
@@ -14553,6 +14597,12 @@ Generating BarChartRace, plotting [&#39;AK&#39;, &#39;AL&#39;, &#39;AR&#39;, &#3
 
 </div>
 
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>This is how the stringency changes in the US.</p>
+
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
@@ -14591,6 +14641,12 @@ Generating BarChartRace, plotting [&#39;AK&#39;, &#39;AL&#39;, &#39;AR&#39;, &#3
 
 </div>
 
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>This is the animation of the number of completed vaccinations in the US.</p>
+
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
@@ -14635,21 +14691,7 @@ Generating BarChartRace, plotting [&#39;AK&#39;, &#39;AL&#39;, &#39;AR&#39;, &#3
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># plots = []</span>
-<span class="c1"># for i in [US_cases_gdf,US_Deaths_gdf,US_Stringency_gdf,US_series_gdf]:</span>
-<span class="c1">#     plots.append(i.plot_animated(filename=&#39;geoCases.mp4&#39;,basemap_format={&#39;source&#39;:cx.providers.Stamen.Terrain},steps_per_period=1,period_length=5,period_fmt=&#39;%Y-%m-%d&#39;,cmap=&quot;Reds&quot;,enable_progress_bar=True,dpi=144, fixed_max=True))</span>
-<span class="c1"># figs = plt.Figure()</span>
-<span class="c1"># figs.set_dpi(144)</span>
-<span class="c1"># gs = figs.add_gridspec(len(plots),1,hspace=0.5)</span>
-<span class="c1"># f1_ax = []</span>
-<span class="c1"># name = [&#39;Cases&#39;,&#39;Deaths&#39;,&#39;Stringency&#39;,&#39;Series&#39;]</span>
-<span class="c1"># for i in range(len(plots)):</span>
-<span class="c1">#     f1_ax.append(figs.add_subplot(gs[i,0]))</span>
-<span class="c1">#     f1_ax[i].set_xlim(-1.5e7,-.4e7)</span>
-<span class="c1">#     f1_ax[i].set_ylim(0,.8e7)</span>
-<span class="c1">#     f1_ax[i].set_title(name[i])</span>
-<span class="c1">#     plots[i].ax = f1_ax[i]</span>
-<span class="c1"># pandas_alive.animate_multiple_plots(filename=&#39;US_geo.mp4&#39;,plots=plots, custom_fig=figs, enable_progress_bar=True)</span>
+<div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 
      </div>
