@@ -14149,7 +14149,7 @@ By this data, I can roughly know what happened during the pandemic. It may provi
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data_us_states</span><span class="p">[</span><span class="s1">&#39;US&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">subplots</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;ConfirmedCases&#39;</span><span class="p">,</span><span class="s1">&#39;ConfirmedDeaths&#39;</span><span class="p">,</span><span class="s1">&#39;Series_Complete_Yes&#39;</span><span class="p">,</span><span class="s1">&#39;StringencyIndex&#39;</span><span class="p">],</span>
     <span class="n">title</span><span class="o">=</span><span class="s1">&#39;US Cases, Deaths, Completed vaccinations, stringency of policy&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">12</span><span class="p">))</span>
-<span class="n">buffer</span> <span class="o">=</span> <span class="n">data_us_states</span><span class="p">[</span><span class="s1">&#39;US&#39;</span><span class="p">]</span>
+<span class="n">US_Total</span> <span class="o">=</span> <span class="n">data_us_states</span><span class="p">[</span><span class="s1">&#39;US&#39;</span><span class="p">]</span>
 </pre></div>
 
      </div>
@@ -14194,12 +14194,12 @@ By this data, I can roughly know what happened during the pandemic. It may provi
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">buffer</span> <span class="o">=</span> <span class="n">buffer</span><span class="p">[[</span><span class="s1">&#39;ConfirmedCases&#39;</span><span class="p">,</span><span class="s1">&#39;ConfirmedDeaths&#39;</span><span class="p">,</span><span class="s1">&#39;Series_Complete_Yes&#39;</span><span class="p">,</span><span class="s1">&#39;StringencyIndex&#39;</span><span class="p">]]</span>
-<span class="n">buffer</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">buffer</span><span class="o">.</span><span class="n">sort_index</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">US_Total</span> <span class="o">=</span> <span class="n">US_Total</span><span class="p">[[</span><span class="s1">&#39;ConfirmedCases&#39;</span><span class="p">,</span><span class="s1">&#39;ConfirmedDeaths&#39;</span><span class="p">,</span><span class="s1">&#39;Series_Complete_Yes&#39;</span><span class="p">,</span><span class="s1">&#39;StringencyIndex&#39;</span><span class="p">]]</span>
+<span class="n">US_Total</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">US_Total</span><span class="o">.</span><span class="n">sort_index</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">plots</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">buffer</span><span class="p">:</span>
-    <span class="n">plots</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">buffer</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">plot_animated</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;line&#39;</span><span class="p">,</span><span class="n">steps_per_period</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">period_length</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">period_fmt</span><span class="o">=</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">fixed_max</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">US_Total</span><span class="p">:</span>
+    <span class="n">plots</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">US_Total</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">plot_animated</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;line&#39;</span><span class="p">,</span><span class="n">steps_per_period</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">period_length</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">period_fmt</span><span class="o">=</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">fixed_max</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
 <span class="n">figs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span>
 <span class="n">figs</span><span class="o">.</span><span class="n">set_dpi</span><span class="p">(</span><span class="mi">144</span><span class="p">)</span>
 <span class="n">gs</span> <span class="o">=</span> <span class="n">figs</span><span class="o">.</span><span class="n">add_gridspec</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">plots</span><span class="p">),</span><span class="mi">1</span><span class="p">,</span><span class="n">hspace</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
@@ -14297,10 +14297,10 @@ Generating LineChart, plotting [&#39;StringencyIndex&#39;]
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Series_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="n">buffer</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
-<span class="n">US_Cases_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="n">buffer</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
-<span class="n">US_Deaths_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="n">buffer</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
-<span class="n">US_Stringency_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="n">buffer</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Series_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="n">US_Total</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+<span class="n">US_Cases_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="n">US_Total</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+<span class="n">US_Deaths_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="n">US_Total</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+<span class="n">US_Stringency_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="n">US_Total</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">state</span><span class="p">,</span> <span class="n">df</span> <span class="ow">in</span> <span class="n">US_data</span><span class="p">[[</span><span class="s1">&#39;State&#39;</span><span class="p">,</span><span class="s1">&#39;ConfirmedCases&#39;</span><span class="p">,</span><span class="s1">&#39;ConfirmedDeaths&#39;</span><span class="p">,</span><span class="s1">&#39;Series_Complete_Yes&#39;</span><span class="p">,</span><span class="s1">&#39;StringencyIndex&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;State&#39;</span><span class="p">):</span>
     <span class="n">df</span><span class="o">.</span><span class="n">sort_index</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">state</span> <span class="o">!=</span> <span class="s1">&#39;US&#39;</span><span class="p">:</span>
@@ -14685,13 +14685,44 @@ Generating BarChartRace, plotting [&#39;AK&#39;, &#39;AL&#39;, &#39;AR&#39;, &#3
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="4-Numerical-Analysis">4 Numerical Analysis<a class="anchor-link" href="#4-Numerical-Analysis">&#182;</a></h2><h4 id="4.1-basic-observation-of-numerical-analysis">4.1 basic observation of numerical analysis<a class="anchor-link" href="#4.1-basic-observation-of-numerical-analysis">&#182;</a></h4><p>To confirm my assumption that the stringency of policies is related to the increasing rate of cases and the number of vaccinations, I will use the following steps to do this:</p>
+<ol>
+<li>define a patition $P$, which divides the data into $n$ parts.</li>
+<li>$dates = date_n-date_0$</li>
+<li>rate of cases or rate of deaths in $P$ can be defined as the rate of average of the data in the $P$ part. For instance, $R_{Ci} = \frac{{C_i}-{C{i-1}}}{Date_i-Date_{i-1}}, i\ge 1, i &lt; n$</li>
+<li>In patition $P$, the strigency can be defined as the average each patition $[i-1,i]$. $S_i = \frac{\sum\limits_{j=date_{i-1}}^{date_i}S[j]}{date_i-date_{i-1}}$</li>
+</ol>
+<p>Then, I want to calculate the correlation of different $n$</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">stri_dict</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">cases_dict</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">deaths_dict</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">vacc_dict</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">states</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">AnalyzeData</span> <span class="o">=</span> <span class="n">US_data</span><span class="p">[[</span><span class="s1">&#39;State&#39;</span><span class="p">,</span><span class="s1">&#39;ConfirmedCases&#39;</span><span class="p">,</span><span class="s1">&#39;ConfirmedDeaths&#39;</span><span class="p">,</span><span class="s1">&#39;Series_Complete_Yes&#39;</span><span class="p">,</span><span class="s1">&#39;StringencyIndex&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">state</span><span class="p">,</span> <span class="n">df</span> <span class="ow">in</span> <span class="n">AnalyzeData</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;State&#39;</span><span class="p">):</span>
+    <span class="n">states</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+    <span class="n">stri_dict</span><span class="p">[</span><span class="n">state</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;StringencyIndex&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
+    <span class="n">cases_dict</span><span class="p">[</span><span class="n">state</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;ConfirmedCases&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
+    <span class="n">deaths_dict</span><span class="p">[</span><span class="n">state</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;ConfirmedDeaths&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
+    <span class="n">vacc_dict</span><span class="p">[</span><span class="n">state</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Series_Complete_Yes&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">300</span><span class="p">]:</span>
+    <span class="n">RC</span> <span class="o">=</span> <span class="p">[(</span><span class="n">i</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">array_split</span><span class="p">(</span><span class="n">cases_dict</span><span class="p">[</span><span class="s1">&#39;US&#39;</span><span class="p">],</span><span class="n">n</span><span class="p">)]</span>
+    <span class="n">RD</span> <span class="o">=</span> <span class="p">[(</span><span class="n">i</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">array_split</span><span class="p">(</span><span class="n">deaths_dict</span><span class="p">[</span><span class="s1">&#39;US&#39;</span><span class="p">],</span><span class="n">n</span><span class="p">)]</span>
+    <span class="n">S</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">array_split</span><span class="p">(</span><span class="n">stri_dict</span><span class="p">[</span><span class="s1">&#39;US&#39;</span><span class="p">],</span><span class="n">n</span><span class="p">)]</span>
+    <span class="n">V</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">array_split</span><span class="p">(</span><span class="n">vacc_dict</span><span class="p">[</span><span class="s1">&#39;US&#39;</span><span class="p">],</span><span class="n">n</span><span class="p">)]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;for n = </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s1"> corref of RC and S is</span><span class="se">\n</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">RC</span><span class="p">,</span><span class="n">S</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s1">corref of RD and S is</span><span class="se">\n</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">RD</span><span class="p">,</span><span class="n">S</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s1">corref of V and S is</span><span class="se">\n</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">V</span><span class="p">,</span><span class="n">S</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s1">corref V and RD is</span><span class="se">\n</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">V</span><span class="p">,</span><span class="n">RD</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s1">corref V and RC is</span><span class="se">\n</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">V</span><span class="p">,</span><span class="n">RC</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -14699,6 +14730,93 @@ Generating BarChartRace, plotting [&#39;AK&#39;, &#39;AL&#39;, &#39;AR&#39;, &#3
 </div>
 </div>
 
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>for n = 50 corref of RC and S is
+[[1.         0.44925961]
+ [0.44925961 1.        ]]
+corref of RD and S is
+[[1.         0.46249531]
+ [0.46249531 1.        ]]
+corref of V and S is
+[[ 1.         -0.27152958]
+ [-0.27152958  1.        ]]
+corref V and RD is
+[[1.         0.01138325]
+ [0.01138325 1.        ]]
+corref V and RC is
+[[1.         0.03187427]
+ [0.03187427 1.        ]]
+for n = 100 corref of RC and S is
+[[1.       0.253709]
+ [0.253709 1.      ]]
+corref of RD and S is
+[[1.         0.26243872]
+ [0.26243872 1.        ]]
+corref of V and S is
+[[ 1.         -0.25918557]
+ [-0.25918557  1.        ]]
+corref V and RD is
+[[ 1.         -0.04953514]
+ [-0.04953514  1.        ]]
+corref V and RC is
+[[ 1.        -0.0354005]
+ [-0.0354005  1.       ]]
+for n = 200 corref of RC and S is
+[[1.         0.17832954]
+ [0.17832954 1.        ]]
+corref of RD and S is
+[[1.         0.18218623]
+ [0.18218623 1.        ]]
+corref of V and S is
+[[ 1.         -0.21638446]
+ [-0.21638446  1.        ]]
+corref V and RD is
+[[ 1.         -0.01869717]
+ [-0.01869717  1.        ]]
+corref V and RC is
+[[ 1.         -0.01208972]
+ [-0.01208972  1.        ]]
+for n = 300 corref of RC and S is
+[[1.        0.3084967]
+ [0.3084967 1.       ]]
+corref of RD and S is
+[[1.         0.44526623]
+ [0.44526623 1.        ]]
+corref of V and S is
+[[ 1.         -0.19876446]
+ [-0.19876446  1.        ]]
+corref V and RD is
+[[ 1.         -0.04802325]
+ [-0.04802325  1.        ]]
+corref V and RC is
+[[1.         0.12914127]
+ [0.12914127 1.        ]]
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>By the correlation coefficient, it shows that rate of case and rate of deaths have a positive relationship of stringency. The vaccination number has a negative relationship of stringency. So as rate of cases and rate of deaths increase, the stringency of policies also increases. When the number of vaccination increases, the stringency of policies decreases.</p>
+<h4 id="4.2-further-observation-of-numerical-analysis">4.2 further observation of numerical analysis<a class="anchor-link" href="#4.2-further-observation-of-numerical-analysis">&#182;</a></h4><p>Another interesting observation is that the rate of cases and rate of deaths have nearly no relationship with the number of vaccination. My instinct is that the change of $Rc$ and $Rd$ is related to the number of vaccination. Then I want to find the change of $Rc$ and $Rd$ in the $P$ part and compare them with the number of vaccination and the stringency of policies. In the previous step, it shows that $n=200$ or $n=300$ are good choices.</p>
+
+</div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
